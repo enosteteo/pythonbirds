@@ -90,8 +90,68 @@ O   L
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
     'Oeste'
-
-
-
-
 """
+
+
+class Direcao:
+    op = ["Norte", "Leste", "Sul", "Oeste"]
+    indice = 0
+    valor = op[indice]
+
+    def __init__(self):
+        self.op
+        self.indice
+        self.valor
+
+    def girar_a_direita(self):
+        self.indice += 1
+        if self.indice > 3:
+            self.indice = 0
+        self.valor = self.op[self.indice]
+
+    def girar_a_esquerda(self):
+        self.indice -= 1
+        if self.indice < -3:
+            self.indice = 0
+        self.valor = self.op[self.indice]
+
+
+class Motor:
+    velocidade = 0
+
+    def acelerar(self):
+        self.velocidade += 1
+
+    def frear(self):
+        if self.velocidade >= 2:
+            self.velocidade -= 2
+        elif self.velocidade >= 1:
+            self.velocidade -= 1
+        elif self.velocidade == 0:
+            pass
+        else:
+            pass
+
+
+class Carro:
+    def __init__(self, dir, mot):
+        self.motor = mot
+        self.direcao = dir
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
+
+    def girar_a_direita(self):
+        self.direcao.girar_a_direita()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
