@@ -123,15 +123,8 @@ class Motor:
         self.velocidade += 1
 
     def frear(self):
-        if self.velocidade >= 2:
-            self.velocidade -= 2
-        elif self.velocidade >= 1:
-            self.velocidade -= 1
-        elif self.velocidade == 0:
-            pass
-        else:
-            pass
-
+        self.velocidade -= 2
+        self.velocidade = max(0, self.velocidade)
 
 class Carro:
     def __init__(self, dir, mot):
