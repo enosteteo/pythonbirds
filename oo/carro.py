@@ -98,11 +98,6 @@ class Direcao:
     indice = 0
     valor = op[indice]
 
-    def __init__(self):
-        self.op
-        self.indice
-        self.valor
-
     def girar_a_direita(self):
         self.indice += 1
         if self.indice > 3:
@@ -125,6 +120,7 @@ class Motor:
     def frear(self):
         self.velocidade -= 2
         self.velocidade = max(0, self.velocidade)
+
 
 class Carro:
     def __init__(self, dir, mot):
