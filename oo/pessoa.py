@@ -18,8 +18,12 @@ class Pessoa:
         return f'{cls} - olhos: {cls.olhos}'
 
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    enos = Pessoa(nome='Enos')
+    enos = Homem(nome='Enos')
     ianka = Pessoa(nome='Ianka')
     iran = Pessoa(enos, ianka, nome='Iran')
 
@@ -42,4 +46,8 @@ if __name__ == '__main__':
     print(id(ianka.olhos), id(enos.olhos), id(iran.olhos))
     print(Pessoa.metodo_estatico(), enos.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), enos.nome_e_atributos_de_classe())
-
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(enos, Pessoa))
+    print(isinstance(enos, Homem))
+    print(isinstance(pessoa, Homem))
