@@ -52,6 +52,10 @@ class Ator():
         :param intervalo: Intervalo a ser considerado
         :return:
         """
+        # self.x += 1
+        # self.y += 1
+        # if self.y == outro_ator.y:
+        #     if self.status()
         pass
 
 
@@ -100,7 +104,8 @@ class Passaro(Ator):
         o status dos Passaro deve ser alterado para destruido, bem como o seu caracter
 
         """
-        pass
+        if self.y <= 0:
+            self.status = DESTRUIDO
 
     def calcular_posicao(self, tempo):
         """
