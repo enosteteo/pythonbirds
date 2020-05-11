@@ -60,13 +60,14 @@ class Ator():
                 self.status = outro_ator.status = DESTRUIDO
 
 
-
 class Obstaculo(Ator):
     _caracter_ativo = 'O'
+    _caracter_destruido = ' '
 
 
 class Porco(Ator):
     _caracter_ativo = '@'
+    _caracter_destruido = '+'
 
 
 class DuploLancamentoExcecao(Exception):
